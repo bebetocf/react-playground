@@ -60,17 +60,27 @@ class App extends Component {
     let persons = null;
 
     if (this.state.showPersons) {
-      persons = (<div>
-        <Person 
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age}/>
-        <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'Xam')}
-          changed={this.changeNameHandler}>
-            My hobbies: Racing</Person>
-      </div>);
+      persons = (
+        <div>
+          {this.state.persons.map(person => {
+            return (
+              <Person 
+                name={person.name}
+                age={person.age}
+              />
+            );
+          })}
+          {/* <Person 
+            name={this.state.persons[0].name} 
+            age={this.state.persons[0].age}/>
+          <Person 
+            name={this.state.persons[1].name} 
+            age={this.state.persons[1].age}
+            click={this.switchNameHandler.bind(this, 'Xam')}
+            changed={this.changeNameHandler}>
+              My hobbies: Racing</Person> */}
+        </div>
+        );
     }
 
     return (
@@ -80,7 +90,7 @@ class App extends Component {
         <button 
           style={buttonStyle}
           // onClick={() => this.switchNameHandler("Maxxxx!")}>Switch Name</button>
-          onClick={this.togglePersonsHandler}>Switch Name</button>
+          onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
     );
