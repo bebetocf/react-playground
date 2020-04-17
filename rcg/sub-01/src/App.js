@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
+
 import './App.css';
 import Person from './Person/Person'
 
+const StyledButton = styled.button`
+  background-color: green;
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+`
 
 class App extends Component {
   state = {
@@ -18,6 +33,8 @@ class App extends Component {
     ],
     showPersons: false
   }
+
+  
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
@@ -46,19 +63,6 @@ class App extends Component {
   }
 
   render() {
-    const buttonStyle = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    };
-
     let persons = null;
 
     if (this.state.showPersons) {
@@ -77,11 +81,11 @@ class App extends Component {
           })}
         </div>
         );
-        buttonStyle.backgroundColor = 'red';
-        buttonStyle[':hover'] = {
-          backgroundColor: 'salmon',
-          color: 'black'
-        }
+        // buttonStyle.backgroundColor = 'red';
+        // buttonStyle[':hover'] = {
+        //   backgroundColor: 'salmon',
+        //   color: 'black'
+        // }
     }
 
     const classes = []
@@ -96,10 +100,10 @@ class App extends Component {
       <div className="App">
         <h1>Hello World</h1> 
         <p className={classes.join(' ')} > This is working </p>
-        <button 
-          style={buttonStyle}
-          // onClick={() => this.switchNameHandler("Maxxxx!")}>Switch Name</button>
-          onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <StyledButton 
+          onClick={this.togglePersonsHandler}>
+            Toggle Persons
+          </StyledButton>
         {persons}
       </div>
     );
