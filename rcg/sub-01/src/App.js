@@ -10,6 +10,9 @@ class App extends Component {
       },
       {
         name: 'Bob', age: 23, id: 'gebsvsdc'
+      },
+      {
+        name: 'Tony', age: 17, id: 'faffefra'
       }
     ],
     showPersons: false
@@ -72,10 +75,18 @@ class App extends Component {
         buttonStyle.backgroundColor = 'red';
     }
 
+    const classes = []
+    if (this.state.persons.length <= 2){
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1){
+      classes.push('bold');
+    }
+
     return (
       <div className="App">
         <h1>Hello World</h1> 
-        <p> This is working </p>
+        <p className={classes.join(' ')} > This is working </p>
         <button 
           style={buttonStyle}
           // onClick={() => this.switchNameHandler("Maxxxx!")}>Switch Name</button>
