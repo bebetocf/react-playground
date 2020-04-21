@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import classes from './Cockpit.css';
+import classes from "./Cockpit.css";
 
 const Cockpit = (props) => {
   const assignedClasses = [];
@@ -20,7 +20,7 @@ const Cockpit = (props) => {
   return (
     <div className={classes.Cockpit}>
       <h1>{props.title}</h1>
-      <p className={assignedClasses.join(' ')}> This is working </p>
+      <p className={assignedClasses.join(" ")}> This is working </p>
       <button className={btnClasses} onClick={props.clicked}>
         Toggle Persons
       </button>

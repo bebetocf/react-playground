@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import classes from './App.css';
-import Persons from '../components/Persons/Persons';
-import Cockpit from '../components/Cockpit/Cockpit';
+import classes from "./App.css";
+import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 class App extends Component {
   state = {
     persons: [
       {
-        name: 'Max',
+        name: "Max",
         age: 28,
-        id: 'adadcacd',
+        id: "adadcacd",
       },
       {
-        name: 'Bob',
+        name: "Bob",
         age: 23,
-        id: 'gebsvsdc',
+        id: "gebsvsdc",
       },
       {
-        name: 'Tony',
+        name: "Tony",
         age: 17,
-        id: 'faffefra',
+        id: "faffefra",
       },
     ],
     showPersons: false,
