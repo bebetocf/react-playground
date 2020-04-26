@@ -6,10 +6,10 @@ import Burguer from "../../components/Burger/Burger";
 class BurguerBuilder extends Component {
   state = {
     ingredients: {
-      salad: 2,
-      bacon: 2,
-      cheese: 2,
-      meat: 1,
+      salad: 0,
+      bacon: 0,
+      cheese: 0,
+      meat: 0,
     },
   };
   render() {
